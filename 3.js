@@ -27,7 +27,8 @@ const foo = str => {
   const reduced = arr.reduce((acc, str) => {
     const sortedWord = sort(str);
 
-    acc[sortedWord] = [ ...(acc[sortedWord] || []), str];  
+    // acc[sortedWord] = [ ...(acc[sortedWord] || []), str];  
+    acc[sortedWord] = (acc[sortedWord] || []).concat(str);  
 
     return acc;
   }, {});
